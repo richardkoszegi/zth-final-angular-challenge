@@ -18,4 +18,9 @@ export class AppComponent {
   stopTimer() {
     clearInterval(this.interval);
   }
+
+  resetTimer() {
+    this.stopTimer();
+    this.seconds = 0;
+  }
 }
