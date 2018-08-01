@@ -1,3 +1,8 @@
+<p>Visszaszámláló:</p>
+<input type="number" #countDownInput> seconds
+<button (click)="startCountDown(countDownInput.value)">Set</button>
+
+<hr/>
 <div *ngFor="let stopper of stoppers; let stopperIndex = index">
   <h2>{{stopperIndex + 1}}. Stopper</h2>
 

@@ -18,46 +18,7 @@ export class AppComponent implements OnInit {
     this.stoppers.push(new Stopper());
   }
 
-  /*seconds: number = 0;
-  roundTimes: number[] = [];
-
-  countInterval: number = 1000;
-
-  interval;
-
-  startTimer() {
-    this.interval = setInterval(() => this.seconds++, this.countInterval);
-    this.roundTimes = [];
+  startCountDown(interval: number) {
+    setTimeout(() => alert('Count Down Timeout'), interval * 1000);
   }
-
-  stopTimer() {
-    clearInterval(this.interval);
-  }
-
-  resetTimer() {
-    this.stopTimer();
-    this.seconds = 0;
-  }
-
-  roundTime() {
-    if ( this.roundTimes.length == 0 ) {
-      this.roundTimes.push(this.seconds);
-    } else {
-      const lastTime = this.roundTimes[this.roundTimes.length - 1];
-      const newTime = this.seconds - lastTime;
-      this.roundTimes.push(newTime);
-    }
-  }
-
-  speedUpTimer() {
-    this.countInterval = this.countInterval / 2;
-    clearInterval(this.interval);
-    this.interval = setInterval(() => this.seconds++, this.countInterval);
-  }
-
-  speedDownTimer() {
-    this.countInterval = this.countInterval * 2;
-    clearInterval(this.interval);
-    this.interval = setInterval(() => this.seconds++, this.countInterval);
-  }*/
 }
