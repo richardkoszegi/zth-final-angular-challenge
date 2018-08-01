@@ -3,6 +3,12 @@
 <button (click)="startCountDown(countDownInput.value)">Set</button>
 
 <hr/>
+
+<p>Ébresztőóra:</p>
+<input type="datetime" #alarmDate>
+<button (click)="setAlarmClock(alarmDate.value)">Set</button>
+
+<hr/>
 <div *ngFor="let stopper of stoppers; let stopperIndex = index">
   <h2>{{stopperIndex + 1}}. Stopper</h2>
 
