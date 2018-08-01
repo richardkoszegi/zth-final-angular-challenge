@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Stopper } from './stopper';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'stopper';
-  seconds: number = 0;
+export class AppComponent implements OnInit {
+
+  stoppers: Stopper[] = [];
+
+  ngOnInit() {
+    this.addStopper();
+  }
+
+  addStopper() {
+    this.stoppers.push(new Stopper());
+  }
+
+  /*seconds: number = 0;
   roundTimes: number[] = [];
 
   countInterval: number = 1000;
@@ -48,5 +59,5 @@ export class AppComponent {
     this.countInterval = this.countInterval * 2;
     clearInterval(this.interval);
     this.interval = setInterval(() => this.seconds++, this.countInterval);
-  }
+  }*/
 }
