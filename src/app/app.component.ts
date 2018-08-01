@@ -10,10 +10,12 @@ export class AppComponent {
   seconds: number = 0;
   roundTimes: number[] = [];
 
+  countInterval: number = 1000;
+
   interval;
 
   startTimer() {
-    this.interval = setInterval(() => this.seconds++, 1000);
+    this.interval = setInterval(() => this.seconds++, this.countInterval);
     this.roundTimes = [];
   }
 
@@ -34,5 +36,17 @@ export class AppComponent {
       const newTime = this.seconds - lastTime;
       this.roundTimes.push(newTime);
     }
+  }
+
+  speedUpTimer() {
+    this.countInterval = this.countInterval / 2;
+    clearInterval(this.interval);
+    this.interval = setInterval(() => this.seconds++, this.countInterval);
+  }
+
+  speedDownTimer() {
+    this.countInterval = this.countInterval * 2;
+    clearInterval(this.interval);
+    this.interval = setInterval(() => this.seconds++, this.countInterval);
   }
 }
