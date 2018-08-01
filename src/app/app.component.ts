@@ -8,11 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'stopper';
   seconds: number = 0;
+  roundTimes: number[] = [];
 
   interval;
 
   startTimer() {
     this.interval = setInterval(() => this.seconds++, 1000);
+    this.roundTimes = [];
   }
 
   stopTimer() {
@@ -22,5 +24,15 @@ export class AppComponent {
   resetTimer() {
     this.stopTimer();
     this.seconds = 0;
+  }
+
+  roundTime() {
+    if ( this.roundTimes.length == 0 ) {
+      this.roundTimes.push(this.seconds);
+    } else {
+      const lastTime = this.roundTimes[this.roundTimes.length - 1];
+      const newTime = this.seconds - lastTime;
+      this.roundTimes.push(newTime);
+    }
   }
 }

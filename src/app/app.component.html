@@ -4,4 +4,12 @@
 <button (click)="startTimer()">Start</button>
 <button (click)="stopTimer()">Stop</button>
 <button (click)="resetTimer()">Reset</button>
+<button (click)="roundTime()">Round Time</button>
+
+<h2>Round Times</h2>
+<ul *ngIf="roundTimes.length > 0">
+  <li *ngFor="let time of roundTimes; let i = index">
+    {{i + 1}}. round: {{time}} seconds
+  </li>
+</ul>
 
